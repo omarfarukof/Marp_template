@@ -1,0 +1,52 @@
+/* @theme ulka-present */
+
+/* @import 'default'; */
+@import 'gaia';
+/* @import 'uncover'; */
+
+h1 {
+    color: red;
+}
+
+
+section {
+    font-size: 25px;
+    background-image: url("assets/ulka-content.svg");
+    padding: 50px 60px;
+    h1 {
+    text-align: left;
+    }
+}
+
+
+section.top-page {
+    background-image: url("assets/ulka-title.svg");
+    justify-items: center;
+    padding-top: 200px;
+    padding-bottom: 110px;
+    font-size: 35px;
+
+}
+
+section.toc-page {
+    background-image: url("assets/ulka-toc.svg");
+    font-size: 30px;
+    padding-top: 100px;
+    padding-left: 225px;
+    
+    li {
+        color: black;
+        font-size: larger;
+        font-weight: bold;
+        text-shadow: 1px 1px 0 silver;
+        }
+}
+
+section.end-page {
+    background-image: url("assets/ulka-end.svg");
+    justify-items: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    
+}
+
