@@ -26,7 +26,7 @@ footer {
 
 section {
     font-size: 25px;
-    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/assets/ulka-content.svg");
+    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-content.svg");
     padding: 50px 60px;
     padding-top: 60px;
 }
@@ -39,7 +39,7 @@ section::after {
 }
 
 section.top-page {
-    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/assets/ulka-title.svg");
+    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-title.svg");
     justify-items: center;
     padding-top: 250px;
     padding-bottom: 110px;
@@ -57,7 +57,7 @@ section.end-page::after {
 }
 
 section.toc-page {
-    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/assets/ulka-toc.svg");
+    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-toc.svg");
     font-size: 30px;
     padding-top: 100px;
     padding-left: 225px;
@@ -71,7 +71,7 @@ section.toc-page li {
 }
 
 section.end-page {
-    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/assets/ulka-end.svg");
+    background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-end.svg");
     justify-items: center;
     padding-top: 180px;
     padding-bottom: 150px;
