@@ -1,0 +1,178 @@
+/* @theme base-two-one-content-slide */
+
+
+/* ============================================
+   TWO-ONE CONTENT SLIDE STYLES
+   (2 columns, 1st column has 2 stacked rows)
+   ============================================ */
+
+/* ========== Debug Borders ========== */
+section.two-one-content-slide.all-border h1,
+section.two-one-content-slide.border h1 {
+  border: 1px dashed red;
+}
+
+section.two-one-content-slide.all-border .col-left-top,
+section.two-one-content-slide.all-border .col-left-bottom,
+section.two-one-content-slide.all-border .col-right,
+section.two-one-content-slide.border .col-left-top,
+section.two-one-content-slide.border .col-left-bottom,
+section.two-one-content-slide.border .col-right {
+  border: 1px dashed gray;
+}
+
+/* ========== Grid Layout ========== */
+section.two-one-content-slide * {
+  line-height: 1;
+}
+section.two-one-content-slide {
+
+  /* ========== Font Size Variables ========== */
+  --h1-size: 45px;
+  --h2-size: 40px;
+  --h3-size: 38px;
+  --h4-size: 30px;
+  --text-size: 25px;
+
+  /* ========== Font Color Variables ========== */
+  --h1-color: blue;
+  --h2-color: darkblue;
+  --h3-color: black;
+  --h4-color: gray;
+  --text-color: black;
+
+  /* ========== Spacing Variables ========== */
+  --big-pad-size: 10px;
+  --pad-size: 5px;
+  --small-pad-size: 2.5px;
+
+  /* ========== Border Variables ========== */
+  --big-border-size: 1.5px;
+  --border-size: 1px;
+  --small-border-size: 0.5px;
+
+  /* ========== Derived Height Variables ========== */
+  /* NOTE: calc() requires spaces around + and - operators */
+  --all-pad: calc(3 * var(--pad-size) + 2 * var(--border-size));
+  --h1-height: calc(var(--h1-size) + var(--all-pad));
+  --h2-height: calc(var(--h2-size) + var(--all-pad));
+  --h3-height: calc(var(--h3-size) + var(--all-pad));
+  --h4-height: calc(var(--h4-size) + var(--all-pad));
+
+  /* ===================================================== */
+
+
+  overflow: visible;
+  display: grid;
+
+  /* Two columns: left side is 1fr, right side is 1fr */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: var(--h1-height) 1fr 1fr;
+  grid-template-areas:
+    "slideheading slideheading"
+    "lefttop      rightpanel"
+    "leftbottom   rightpanel";
+
+  gap: 0;
+
+  /* Ensure padding is included in height calculations */
+  box-sizing: border-box;
+}
+
+/* ========== Slide Heading (H1) ========== */
+section.two-one-content-slide h1 {
+  grid-area: slideheading;
+
+  padding: var(--pad-size);
+  margin: 0;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+
+  /* Use CSS variable for font size consistency */
+  font-size: var(--h1-size);
+  height: var(--h1-height);
+  /* line-height: var(--h1-height); */  
+  /* line-height: 1; */
+
+}
+
+/* ========== Column Containers ========== */
+section.two-one-content-slide .col-left-top,
+section.two-one-content-slide .col-left-bottom,
+section.two-one-content-slide .col-right {
+  padding: var(--pad-size);
+  margin: 0;
+  box-sizing: border-box;
+
+  /* Allow content to scroll if it overflows */
+  overflow: auto;
+}
+
+/* Left Top Panel */
+section.two-one-content-slide .col-left-top {
+  grid-area: lefttop;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* Left Bottom Panel */
+section.two-one-content-slide .col-left-bottom {
+  grid-area: leftbottom;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* Right Panel (spans 2 rows) */
+section.two-one-content-slide .col-right {
+  grid-area: rightpanel;
+  margin-left: 5px;
+}
+
+/* ========== Nested Element Spacing ========== */
+section.two-one-content-slide .col-left-top > *,
+section.two-one-content-slide .col-left-bottom > *,
+section.two-one-content-slide .col-right > * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* section.two-one-content-slide .col-left-top > *:last-child,
+section.two-one-content-slide .col-left-bottom > *:last-child,
+section.two-one-content-slide .col-right > *:last-child {
+  margin-bottom: 0;
+} */
+
+/* ========== Sub-headings within panels ========== */
+/* section.two-one-content-slide .col-left-top h2,
+section.two-one-content-slide .col-left-bottom h2,
+section.two-one-content-slide .col-right h2 {
+  margin: 0;
+  padding: var(--pad-size, 5px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
+
+/* ========== Lists within panels ========== */
+/* section.two-one-content-slide .col-left-top ul,
+section.two-one-content-slide .col-left-top ol,
+section.two-one-content-slide .col-left-bottom ul,
+section.two-one-content-slide .col-left-bottom ol,
+section.two-one-content-slide .col-right ul,
+section.two-one-content-slide .col-right ol {
+  padding-left: 30px;
+  margin-bottom: 10px;
+} */
+
+/* section.two-one-content-slide .col-left-top li,
+section.two-one-content-slide .col-left-bottom li,
+section.two-one-content-slide .col-right li {
+  margin-bottom: 5px;
+} */
+
+/* ========== Paragraphs within panels ========== */
+/* section.two-one-content-slide .col-left-top p,
+section.two-one-content-slide .col-left-bottom p,
+section.two-one-content-slide .col-right p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+} */

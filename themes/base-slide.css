@@ -1,0 +1,110 @@
+/* @theme base-slide */
+
+@import 'default';
+@import 'base-title-slide';
+@import 'base-content-slide';
+@import 'base-two-content-slide';
+@import 'base-three-content-slide';
+@import 'base-four-content-slide';
+@import 'base-two-one-content-slide';
+@import 'base-one-two-content-slide';
+
+/* ============================================
+   BASE SLIDE STYLES
+   ============================================ */
+
+
+:root {
+  --theme-path: "."; /* default, overridden per project */
+  margin: 0;
+  line-height: 1;
+
+  /* ========== Font Size Variables ========== */
+  --h1-size: 45px;
+  --h2-size: 40px;
+  --h3-size: 38px;
+  --h4-size: 30px;
+  --text-size: 25px;
+
+  /* ========== Font Color Variables ========== */
+  --h1-color: blue;
+  --h2-color: darkblue;
+  --h3-color: black;
+  --h4-color: gray;
+  --text-color: black;
+
+  /* ========== Spacing Variables ========== */
+  --big-pad-size: 10px;
+  --pad-size: 5px;
+  --small-pad-size: 2.5px;
+
+  /* ========== Border Variables ========== */
+  --big-border-size: 1.5px;
+  --border-size: 1px;
+  --small-border-size: 0.5px;
+
+  /* ========== Derived Height Variables ========== */
+  /* NOTE: calc() requires spaces around + and - operators */
+  --all-pad: calc(2 * var(--pad-size) + 2 * var(--border-size));
+  --h1-height: calc(var(--h1-size) + var(--all-pad));
+  --h2-height: calc(var(--h2-size) + var(--all-pad));
+  --h3-height: calc(var(--h3-size) + var(--all-pad));
+  --h4-height: calc(var(--h4-size) + var(--all-pad));
+
+}
+
+section {
+  /* Box model */
+  padding: 60px;
+  box-sizing: border-box;
+
+  /* Layout */
+  overflow: visible;
+
+  /* Debug border - remove in production */
+  border: 1px dashed gray;
+
+
+
+  /* ========== Base Typography ========== */
+  font-size: var(--text-size);
+  color: var(--text-color);
+}
+
+/* ========== Pagination Control ========== */
+section.slide_not_paginate::after {
+  display: none;
+}
+
+/* ========== Debug: Border All Elements ========== */
+section.all-border * {
+  border: 1px dashed gray;
+}
+
+/* ========== Heading Styles ========== */
+section h1 {
+  font-size: var(--h1-size);
+  color: var(--h1-color);
+}
+
+section h2 {
+  font-size: var(--h2-size);
+  color: var(--h2-color);
+}
+
+section h3 {
+  font-size: var(--h3-size);
+  color: var(--h3-color);
+}
+
+section h4 {
+  font-size: var(--h4-size);
+  color: var(--h4-color);
+}
+
+/* ========== Base Element Spacing ========== */
+/* Apply padding-left to direct children only, not all descendants */
+section > * {
+  padding-left: var(--pad-size);
+  margin: 0;
+}

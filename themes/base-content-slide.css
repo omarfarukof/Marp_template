@@ -1,0 +1,98 @@
+/* @theme base-content-slide */
+
+
+/* ============================================
+   SINGLE CONTENT SLIDE STYLES
+   ============================================ */
+
+/* ========== Debug: Border All Elements ========== */
+section.content-slide.all-border h1,
+section.content-slide.border h1 {
+  border: 1px dashed red;
+}
+
+section.content-slide.all-border div,
+section.content-slide.border div {
+  border: 1px dashed gray;
+}
+
+/* ========== Content Slide Layout ========== */
+section.content-slide {
+  overflow: visible;
+  display: grid;
+
+  /* Use minmax to prevent content overflow issues */
+  grid-template-columns: 100%;
+  grid-template-rows: minmax(auto, 18%) 1fr;
+  grid-template-areas: 
+    "slideheading"
+    "slidecontent";
+
+  /* Ensure padding is included in height calculations */
+  box-sizing: border-box;
+}
+
+/* ========== Reset ONLY direct children margins ========== */
+/* FIXED: Was 'section.content-slide *' which broke ALL nested elements */
+section.content-slide > * {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+/* Remove bottom margin from last direct child to prevent extra spacing */
+section.content-slide > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== Heading (H1) - Slide Title ========== */
+section.content-slide h1 {
+  grid-area: slideheading;
+
+  display: flex;
+  /* FIXED: Was 'flex-star' (typo) -> 'flex-start' */
+  align-items: flex-start;
+  /* FIXED: 'left' is non-standard, use 'flex-start' */
+  justify-content: flex-start;
+
+  /* Use min-height instead of fixed height for flexibility */
+  min-height: 80px;
+  height: auto;
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* ========== Content Container (DIV) ========== */
+/* FIXED: Added grid-area: slidecontent so div is placed in the grid */
+section.content-slide > div {
+  grid-area: slidecontent;
+  padding: 10px;
+  box-sizing: border-box;
+
+  /* Allow content to scroll if it overflows */
+  overflow: auto;
+}
+
+/* ========== Sub-headings within content ========== */
+section.content-slide h2 {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* ========== List Items ========== */
+section.content-slide ul,
+section.content-slide ol {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+section.content-slide li {
+  margin-bottom: 5px;
+}
+
+/* ========== Paragraphs ========== */
+section.content-slide p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}

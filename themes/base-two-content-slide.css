@@ -1,0 +1,119 @@
+/* @theme base-two-content-slide */
+
+
+/* ============================================
+   TWO-COLUMN CONTENT SLIDE STYLES
+   ============================================ */
+
+/* ========== Debug Borders ========== */
+section.two-content-slide.all-border h1,
+section.two-content-slide.border h1 {
+  border: 1px dashed red;
+}
+
+section.two-content-slide.all-border .col-left,
+section.two-content-slide.all-border .col-right,
+section.two-content-slide.border .col-left,
+section.two-content-slide.border .col-right {
+  border: 1px dashed gray;
+}
+
+/* ========== Grid Layout ========== */
+section.two-content-slide {
+  overflow: visible;
+  display: grid;
+
+  /* Use 1fr 1fr for equal columns instead of 50% 50%
+     This is more robust and handles gaps better */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(auto, 18%) 1fr;
+  grid-template-areas:
+    "slideheading slideheading"
+    "leftpanel    rightpanel";
+
+  /* Add gap between columns instead of using margins on children */
+  gap: 0;
+
+  /* Ensure padding is included in height calculations */
+  box-sizing: border-box;
+}
+
+/* ========== Slide Heading (H1) ========== */
+section.two-content-slide h1 {
+  grid-area: slideheading;
+
+  padding: 1%;
+  margin: 0;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+
+  /* Use CSS variable for font size consistency */
+  font-size: var(--h1-size, 50px);
+}
+
+/* ========== Column Containers ========== */
+/* RENAMED: .ldiv -> .col-left, .rdiv -> .col-right
+   These names are more semantic and standard */
+section.two-content-slide .col-left,
+section.two-content-slide .col-right {
+  padding: 1%;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* Allow content to scroll if it overflows */
+  overflow: auto;
+}
+
+section.two-content-slide .col-left {
+  grid-area: leftpanel;
+  margin-right: 5px;
+}
+
+section.two-content-slide .col-right {
+  grid-area: rightpanel;
+  margin-left: 5px;
+}
+
+/* ========== Nested Element Spacing ========== */
+/* FIXED: Was using nested * selector which is invalid CSS syntax
+   and also too aggressive. Now we target specific elements. */
+section.two-content-slide .col-left > *,
+section.two-content-slide .col-right > * {
+  margin-bottom: 5px;
+}
+
+section.two-content-slide .col-left > *:last-child,
+section.two-content-slide .col-right > *:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== Sub-headings within columns ========== */
+section.two-content-slide .col-left h2,
+section.two-content-slide .col-right h2 {
+  margin: 0;
+  padding: 10px;
+  /* FIXED: Was 'margin-top: 10' (missing unit) -> 'margin-top: 10px' */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ========== Lists within columns ========== */
+section.two-content-slide .col-left ul,
+section.two-content-slide .col-left ol,
+section.two-content-slide .col-right ul,
+section.two-content-slide .col-right ol {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+section.two-content-slide .col-left li,
+section.two-content-slide .col-right li {
+  margin-bottom: 5px;
+}
+
+/* ========== Paragraphs within columns ========== */
+section.two-content-slide .col-left p,
+section.two-content-slide .col-right p {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}

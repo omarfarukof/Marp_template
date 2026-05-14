@@ -1,0 +1,53 @@
+/* @theme base-content-slide*/
+
+@import 'default';
+
+
+/* ============== Slide Type ============== */
+/* ======= One Content / One Column ======= */
+
+section.all-border * {
+  border: 1px dashed gray;
+}
+
+section.content-slide * {
+  margin: 0;
+  margin-bottom: 5px;
+  gap: 0;
+}
+
+section.content-slide.all-border h1 ,
+section.content-slide.border h1 {
+  border: 1px dashed red; 
+}
+
+section.content-slide.all-border div,
+section.content-slide.border div {
+  border: 1px dashed gray; 
+}
+
+section.content-slide {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 18% auto;
+  grid-template-areas: 
+    "slideheading"
+    "slidecontent";
+}
+section.content-slide h1 ,
+section.content-slide div {
+  padding: 10px;
+}
+section.content-slide h1 {
+  grid-area: slideheading;
+
+  display: flex;
+  align-items: flex-star;
+  justify-content: left;
+  height: 80px;
+}
+
+section.content-slide h2 {
+  padding: 5px;
+}

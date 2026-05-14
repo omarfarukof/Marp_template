@@ -1,0 +1,63 @@
+/* @theme base-two-content-slide*/
+
+@import 'default';
+
+
+/* ============== Slide Type ============== */
+/* ======= Two Content / Two Column ======= */
+
+section.two-content-slide.all-border h1 ,
+section.two-content-slide.border h1 {
+    border: 1px dashed red; 
+}
+
+section.two-content-slide.all-border .ldiv, 
+section.two-content-slide.all-border .rdiv,
+section.two-content-slide.border .ldiv, 
+section.two-content-slide.border .rdiv {
+  border: 1px dashed gray; 
+}
+
+section.two-content-slide {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 18% auto;
+  grid-template-areas: 
+      "slideheading slideheading"
+      "leftpanel rightpanel";
+}
+section.two-content-slide h1 ,
+section.two-content-slide .ldiv, 
+section.two-content-slide .rdiv {
+  padding: 1%;
+  margin: 0;
+  * {
+    margin: 0;
+  }
+}
+section.two-content-slide h1 {
+  margin-bottom: 10px;
+}
+section.two-content-slide .ldiv {
+  margin-right: 5px;
+}
+section.two-content-slide .rdiv {
+  margin-left: 5px;
+}
+
+section.two-content-slide .ldiv h2 ,
+section.two-content-slide .rdiv h2{
+  margin: 0;
+  padding: 10px;
+  margin-top: 10;  
+  margin-bottom: 10;
+}
+
+
+section.two-content-slide h1 {
+  grid-area: slideheading;
+  font-size: 50px;
+}
+section.two-content-slide .ldiv { grid-area: leftpanel; }
+section.two-content-slide .rdiv { grid-area: rightpanel; }

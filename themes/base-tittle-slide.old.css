@@ -1,0 +1,61 @@
+/* @theme base-title-slide */
+
+@import 'default';
+
+
+/* ============== Slide Type ============== */
+/* ======= Title Slide / Title and Subtitle ======= */
+
+section.all-border h1,
+section.title-slide.border h1 {
+  border: 1px dashed red;
+}
+section.all-border h2,
+section.title-slide.border h2 {
+  border: 1px dashed gray;
+}
+
+
+
+section.title-slide {
+  --title-height: 130px;
+  --subtitle-height: 70px;
+
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr calc(var(--title-height)*2) calc(var(--subtitle-height)*2) 1fr;
+  grid-template-areas: "." "title" "subtitle" ".";
+  border: 2px dashed gray;
+}
+
+
+section.title-slide h1,
+section.title-slide h2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: calc(var(--area-height) * 2);
+  line-height: normal;
+  font-size: calc(var(--area-height) * 0.7);
+}
+
+section.title-slide h1 {
+  grid-area: title;
+  --area-height: var(--title-height);
+  margin-bottom: 10px;
+  /* Align text to bottom center */
+  display: flex;
+  align-items: flex-end;      /* bottom */
+  justify-content: center;    /* center */
+  
+}
+section.title-slide h2 {
+  grid-area: subtitle;
+  --area-height: var(--subtitle-height);
+  margin-top: 10px;
+  /* Top center: text grows DOWN when wrapping */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
