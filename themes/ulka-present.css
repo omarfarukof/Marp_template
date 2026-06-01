@@ -1,7 +1,8 @@
 /* @theme ulka-present */
 
+@import 'base-slide';
 /* @import 'default'; */
-@import 'gaia';
+/* @import 'gaia'; */
 /* @import 'uncover'; */
 
 :root {
@@ -19,11 +20,16 @@ marp-pre {
     border-radius: 10px
 }
 footer {
-    text-align: right;
-    height: 42px;
-    padding: 0 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    text-align: center;
+    /* height: 30px; */
+    padding: 0;
 }
-
+section::after {
+    bottom: 10px
+}
 section {
     font-size: 25px;
     background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-content.svg");
@@ -34,22 +40,19 @@ section h1 {
     text-align: left;
 }
 
-section::after {
-    bottom: 25px
-}
 
-section.top-page {
+
+section.title-slide {
     background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-title.svg");
-    justify-items: center;
-    padding-top: 250px;
-    padding-bottom: 110px;
-    font-size: 35px;
+
+    /* padding-top: 250px;
+    padding-bottom: 110px; */
 }
-section.top-page footer {
+section.title-slide footer {
     position: absolute;
-    top: 575px;
+    bottom: 110px;
 }
-section.top-page::after {
+section.title-slide::after {
     display: none;
 }
 section.end-page::after {
@@ -60,14 +63,33 @@ section.toc-page {
     background-image: url("https://raw.githubusercontent.com/omarfarukof/Marp_template/refs/heads/main/themes/ulka-assets//ulka-toc.svg");
     font-size: 30px;
     padding-top: 100px;
-    padding-left: 225px;
+    padding-left: 200px;
 }
-
 section.toc-page li {
     color: rgb(69, 90, 100);
     font-size: larger;
     font-weight: bold;
     text-shadow: 1px 1px 0 silver;
+}
+section.toc-page li a {
+    color: rgb(69, 90, 100);
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 silver;
+}
+
+section.toc-page li::marker {
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 black;
+}
+
+section.toc-page li li::marker {
+    color: rgb(69, 90, 100);
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 black;
 }
 
 section.end-page {

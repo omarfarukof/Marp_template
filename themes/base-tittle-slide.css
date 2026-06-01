@@ -26,7 +26,7 @@ section.title-slide {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr calc(var(--title-height) * 2) calc(var(--subtitle-height) * 2) 1fr;
   grid-template-areas: "." "title" "subtitle" ".";
-  border: 2px dashed gray;
+  /* border: 0px dashed gray; */
 
   /* Ensure padding is included in height calculations */
   box-sizing: border-box;

@@ -17,6 +17,7 @@
 :root {
   --theme-path: "."; /* default, overridden per project */
   margin: 0;
+  border: 0px;
   line-height: 1;
 
   /* ========== Font Size Variables ========== */
@@ -62,7 +63,7 @@ section {
   overflow: visible;
 
   /* Debug border - remove in production */
-  border: 1px dashed gray;
+  /* border: 0px dashed gray; */
 
 
 
